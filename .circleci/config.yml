@@ -4,7 +4,7 @@ jobs:
     docker:
       - image: circleci/node:15.5.1
 
-    working_directory: ~/api-project
+    working_directory: ~/repo
 
     steps:
       - checkout
@@ -25,7 +25,9 @@ jobs:
 
       - run:
           name: Deploy application
-          command: sls deploy
+          command: |
+            cd api-project
+            sls deploy
 
       - save_cache:
           paths:
