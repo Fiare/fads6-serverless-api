@@ -19,8 +19,14 @@ jobs:
       - run:
           name: Install Serverless CLI and dependencies
           command: |
+<<<<<<< Updated upstream
             sudo npm i -g serverless
             npm install
+=======
+            sudo npm i -g serverless --unsafe-perm
+            sudo npm install
+            sudo apt-get install awscli
+>>>>>>> Stashed changes
 
       - save_cache:
           paths:
