@@ -4,7 +4,7 @@ jobs:
     docker:
       - image: circleci/node:8.10
 
-    working_directory: ~/repo
+    working_directory: ~/serverless
 
     steps:
       - checkout
@@ -20,7 +20,12 @@ jobs:
           name: Install Serverless CLI and dependencies
           command: |
             sudo npm i -g serverless
+<<<<<<< Updated upstream
             npm install
+=======
+            sudo npm install
+            sudo apt-get install awscli
+>>>>>>> Stashed changes
 
       - save_cache:
           paths:
